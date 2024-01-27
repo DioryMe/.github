@@ -1,0 +1,8 @@
+{
+    "name": "DioryMe publish to npm routine",
+    "description": "Unifies the way how @diograph/* packages are published",
+    "iconName": "package",
+    "filePatterns": [
+        "package.json",
+    ]
+}
