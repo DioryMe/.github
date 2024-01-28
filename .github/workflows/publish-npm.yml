@@ -4,9 +4,13 @@ on:
   workflow_call:
     inputs:
       version:
-        description: 'Specify the version to publish'
+        description: "Version specification for the package to be published"
         required: true
         type: string
+    secrets:
+      NPM_AUTH_TOKEN:
+        description: "Repository/package specific NPM token"
+        required: true
 
 jobs:
   publish:
@@ -21,8 +25,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          registry-url: 'https://registry.npmjs.org'
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: yarn install
